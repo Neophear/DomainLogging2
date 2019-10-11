@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DomainLoggingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dlservice:6970/DomainLoggingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dlservice:6970/DomainLoggingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dlservice:6970/DomainLoggingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DomainLoggingService.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDomainLoggingService_WriteLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteLog" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_WriteLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_SaveComputerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveComputerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_SaveComputerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveComputerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_SaveComputerLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveComputerLocation" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_SaveComputerLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveComputerLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_WriteErrorLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteErrorLog" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_WriteErrorLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteErrorLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_NeedsLocationUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:NeedsLocationUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IDomainLoggingService_NeedsLocationUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NeedsLocationUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDomainLoggingService">
+    <wsdl:operation name="WriteLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDomainLoggingService/WriteLog" message="tns:IDomainLoggingService_WriteLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDomainLoggingService/WriteLogResponse" message="tns:IDomainLoggingService_WriteLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveComputerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDomainLoggingService/SaveComputerInfo" message="tns:IDomainLoggingService_SaveComputerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDomainLoggingService/SaveComputerInfoResponse" message="tns:IDomainLoggingService_SaveComputerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveComputerLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDomainLoggingService/SaveComputerLocation" message="tns:IDomainLoggingService_SaveComputerLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDomainLoggingService/SaveComputerLocationResponse" message="tns:IDomainLoggingService_SaveComputerLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDomainLoggingService/WriteErrorLog" message="tns:IDomainLoggingService_WriteErrorLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDomainLoggingService/WriteErrorLogResponse" message="tns:IDomainLoggingService_WriteErrorLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NeedsLocationUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDomainLoggingService/NeedsLocationUpdate" message="tns:IDomainLoggingService_NeedsLocationUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDomainLoggingService/NeedsLocationUpdateResponse" message="tns:IDomainLoggingService_NeedsLocationUpdate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDomainLoggingService" type="tns:IDomainLoggingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WriteLog">
+      <soap:operation soapAction="http://tempuri.org/IDomainLoggingService/WriteLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveComputerInfo">
+      <soap:operation soapAction="http://tempuri.org/IDomainLoggingService/SaveComputerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveComputerLocation">
+      <soap:operation soapAction="http://tempuri.org/IDomainLoggingService/SaveComputerLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorLog">
+      <soap:operation soapAction="http://tempuri.org/IDomainLoggingService/WriteErrorLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NeedsLocationUpdate">
+      <soap:operation soapAction="http://tempuri.org/IDomainLoggingService/NeedsLocationUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DomainLoggingService">
+    <wsdl:port name="BasicHttpBinding_IDomainLoggingService" binding="tns:BasicHttpBinding_IDomainLoggingService">
+      <soap:address location="http://dlservice:6970/DomainLoggingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b9e5d75-fb61-4222-b65b-0f1796f7a5a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dlservice:6970/AdminService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AdminService1.disco" MetadataType="Disco" ID="4ffd6875-5300-45c2-9a65-6dd2668e482a" SourceId="1" SourceUrl="http://dlservice:6970/AdminService.svc?disco" />
+    <MetadataFile FileName="AdminService3.xsd" MetadataType="Schema" ID="d51e7368-5e06-4b57-bdf2-dbd78d265e31" SourceId="1" SourceUrl="http://dlservice:6970/AdminService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AdminService31.xsd" MetadataType="Schema" ID="c3c083cb-ee2e-4775-a885-2768ea230c83" SourceId="1" SourceUrl="http://dlservice:6970/AdminService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AdminService1.wsdl" MetadataType="Wsdl" ID="9255670d-e358-42c7-a2e8-a574e64a8c4e" SourceId="1" SourceUrl="http://dlservice:6970/AdminService.svc?wsdl" />
+    <MetadataFile FileName="AdminService32.xsd" MetadataType="Schema" ID="ed928add-123d-4209-8b47-6c779e96ab59" SourceId="1" SourceUrl="http://dlservice:6970/AdminService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

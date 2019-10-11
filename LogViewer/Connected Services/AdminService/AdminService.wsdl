@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AdminService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IAdminService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dlservice:6970/AdminService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dlservice:6970/AdminService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dlservice:6970/AdminService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DomainLoggingService.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAdminService_GetComputerInfoFromId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerInfoFromId" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerInfoFromId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerInfoFromIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerInfoFromSerialNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerInfoFromSerialNumber" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerInfoFromSerialNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerInfoFromSerialNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerLocation" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerInfos" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_FindLastComputer_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindLastComputer" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_FindLastComputer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindLastComputerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLog" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerLog" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetComputerLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComputerLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetUserLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLog" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetUserLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IAdminService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAdminService">
+    <wsdl:operation name="GetComputerInfoFromId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetComputerInfoFromId" message="tns:IAdminService_GetComputerInfoFromId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetComputerInfoFromIdResponse" message="tns:IAdminService_GetComputerInfoFromId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerInfoFromSerialNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetComputerInfoFromSerialNumber" message="tns:IAdminService_GetComputerInfoFromSerialNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetComputerInfoFromSerialNumberResponse" message="tns:IAdminService_GetComputerInfoFromSerialNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetComputerLocation" message="tns:IAdminService_GetComputerLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetComputerLocationResponse" message="tns:IAdminService_GetComputerLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerInfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetComputerInfos" message="tns:IAdminService_GetComputerInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetComputerInfosResponse" message="tns:IAdminService_GetComputerInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindLastComputer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/FindLastComputer" message="tns:IAdminService_FindLastComputer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/FindLastComputerResponse" message="tns:IAdminService_FindLastComputer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetLog" message="tns:IAdminService_GetLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetLogResponse" message="tns:IAdminService_GetLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetComputerLog" message="tns:IAdminService_GetComputerLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetComputerLogResponse" message="tns:IAdminService_GetComputerLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetUserLog" message="tns:IAdminService_GetUserLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetUserLogResponse" message="tns:IAdminService_GetUserLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdminService/GetUser" message="tns:IAdminService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdminService/GetUserResponse" message="tns:IAdminService_GetUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAdminService" type="tns:IAdminService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IAdminService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetComputerInfoFromId">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetComputerInfoFromId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerInfoFromSerialNumber">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetComputerInfoFromSerialNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerLocation">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetComputerLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerInfos">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetComputerInfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindLastComputer">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/FindLastComputer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLog">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComputerLog">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetComputerLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLog">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetUserLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IAdminService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdminService">
+    <wsdl:port name="BasicHttpBinding_IAdminService" binding="tns:BasicHttpBinding_IAdminService">
+      <soap:address location="http://dlservice:6970/AdminService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

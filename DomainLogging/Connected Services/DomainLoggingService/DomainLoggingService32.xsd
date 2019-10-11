@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dlservice:6970/DomainLoggingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DomainLoggingService.Model" />
+  <xs:element name="WriteLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serialNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parameters" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WriteLogResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComputerInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DomainLoggingService.Model" minOccurs="0" name="computerInfo" nillable="true" type="q1:ComputerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComputerInfoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComputerLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serialNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="myn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="byg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lok" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="owner" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveComputerLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteErrorLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="computerName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteErrorLogResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NeedsLocationUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serialNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NeedsLocationUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NeedsLocationUpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

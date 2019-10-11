@@ -1,0 +1,30 @@
+﻿@model IEnumerable<LogViewerWeb.AdminService.LogEntry>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parameters)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Timestamp)
+    </td>
+    <td>
+        @Html.ActionLink(item.SerialNumber, $"Details/{item.ComputerId}", "Computer")
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Parameters)
+    </td>
+</tr>
+}
+
+</table>

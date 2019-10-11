@@ -1,0 +1,88 @@
+﻿@model IEnumerable<LogViewerWeb.AdminService.ComputerInfo>
+
+@{
+    ViewBag.Title = "Alle computere";
+}
+
+<h2>Alle computere</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CPU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPUCores)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiskSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GFX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastAlive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RAMGB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamViewerId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPUCores)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiskSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GFX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastAlive)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RAMGB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SerialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamViewerId)
+        </td>
+        <td>
+            @Html.ActionLink("Detaljer", "Details", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

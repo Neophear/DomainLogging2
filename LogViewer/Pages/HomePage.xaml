@@ -1,0 +1,41 @@
+﻿<local:BasePage x:Class="LogViewer.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      xmlns:local="clr-namespace:LogViewer.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Start"
+      FontSize="40"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" Click="ShowLog" Content="Vis log" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Button Grid.Column="1" Grid.Row="0" Click="ShowComputers" Content="Computere" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="Find bruger" HorizontalAlignment="Center" />
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <xctk:WatermarkTextBox Grid.Column="0" Margin="10" x:Name="wtxtUsername" Watermark="Indtast brugernavn...">
+                <xctk:WatermarkTextBox.WatermarkTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Margin="0" Foreground="Gray" Focusable="False" />
+                    </DataTemplate>
+                </xctk:WatermarkTextBox.WatermarkTemplate>
+            </xctk:WatermarkTextBox>
+            <Button Click="FindUser" IsDefault="True" Grid.Column="1" Width="200" Content="Find" Margin="10" />
+        </Grid>
+    </Grid>
+</local:BasePage>

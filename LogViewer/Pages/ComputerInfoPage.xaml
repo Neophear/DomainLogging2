@@ -1,0 +1,86 @@
+﻿<local:BasePage x:Class="LogViewer.Pages.ComputerInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LogViewer.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}"
+      Title="{Binding Path=Computer.SerialNumber}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Serienummer" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Computer.SerialNumber}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Navn" />
+        <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding Path=Computer.Name}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Model" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Computer.Model}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="OS" />
+        <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Path=Computer.OS}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="CPU" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Computer.CPU}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="Kerner" />
+        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=Computer.CPUCores}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="RAM" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Computer.RAMGB}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="Disk" />
+        <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=Computer.DiskMediaType}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Disk plads" />
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=Computer.DiskSize}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="GFX" />
+        <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding Path=Computer.GFX}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="TeamViewer" />
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=Computer.TeamViewerId}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="5" Grid.Column="2" Text="Sidst aktiv" />
+        <TextBox Grid.Row="5" Grid.Column="3" Text="{Binding Path=Computer.LastAlive, StringFormat='dd-MM-yyyy HH:mm:ss'}" IsReadOnly="True" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Lokation" />
+        <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" IsReadOnly="True">
+            <TextBox.Text>
+                <MultiBinding StringFormat="{}MYN: {0} - BYG: {1} - RUM: {2} - Ejer: {3} - Sidste update: {4:dd-MM-yyyy}">
+                    <Binding Path="Location.MYN" />
+                    <Binding Path="Location.BYG" />
+                    <Binding Path="Location.LOK" />
+                    <Binding Path="Location.Owner" />
+                    <Binding Path="Location.LastUpdate" />
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
+
+        <DataGrid Grid.Row="7" Grid.ColumnSpan="4" x:Name="dgLog" HorizontalAlignment="Stretch" SelectionMode="Single" IsReadOnly="True"
+                        AutoGenerateColumns="False" ItemsSource="{Binding Path=Log}" ColumnWidth="*" MouseDoubleClick="DgLog_MouseDoubleClick" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Timestamp" Binding="{Binding Timestamp, StringFormat=dd-MM-yyyy HH:mm}" />
+                <DataGridTextColumn Header="Username" Binding="{Binding Username}" />
+                <DataGridTextColumn Header="Parameters" Binding="{Binding Parameters}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</local:BasePage>

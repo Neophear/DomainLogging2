@@ -1,0 +1,107 @@
+﻿@model LogViewerWeb.AdminService.ComputerInfo
+
+@{
+    ViewBag.Title = "Detaljer";
+}
+
+<h2>Computer</h2>
+
+<div>
+    <h4>Computer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CPU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPUCores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPUCores)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiskSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiskSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GFX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GFX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastAlive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastAlive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAMGB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAMGB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamViewerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeamViewerId)
+        </dd>
+
+    </dl>
+</div>
+
+@{
+    //Partial view for listing and creating comments
+    Html.RenderAction("ComputerLog", new { id = Model.Id });
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DomainLoggingService.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DomainLoggingService.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dlservice:6970/AdminService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ComputerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CPU" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPUCores" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="DiskMediaType" type="tns:DiskType" />
+      <xs:element minOccurs="0" name="DiskSize" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="GFX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastAlive" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAMGB" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TeamViewerId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComputerInfo" nillable="true" type="tns:ComputerInfo" />
+  <xs:simpleType name="DiskType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unspecified">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HDD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SSD">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SCM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DiskType" nillable="true" type="tns:DiskType" />
+  <xs:complexType name="ComputerLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BYG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MYN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComputerLocation" nillable="true" type="tns:ComputerLocation" />
+  <xs:complexType name="ArrayOfComputerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ComputerInfo" nillable="true" type="tns:ComputerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComputerInfo" nillable="true" type="tns:ArrayOfComputerInfo" />
+  <xs:complexType name="ArrayOfLogEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogEntry" nillable="true" type="tns:LogEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogEntry" nillable="true" type="tns:ArrayOfLogEntry" />
+  <xs:complexType name="LogEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComputerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerialNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogEntry" nillable="true" type="tns:LogEntry" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Locked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+</xs:schema>
