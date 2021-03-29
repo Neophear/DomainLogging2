@@ -52,7 +52,8 @@ namespace LogViewer.Pages
                 new Tuple<string, string, DateTime>("1.0", "Sweet sweet release!", new DateTime(2019, 8, 1)),
                 new Tuple<string, string, DateTime>("1.1", "Tilføjet Om, herunder ChangeLog", new DateTime(2019, 8, 1)),
                 new Tuple<string, string, DateTime>("1.1.1", "Fixet visuel bug på Start-siden\nUdvidet manuel versionsstyring (for det har jeg åbenbart brug for!)\nTilføjet dato til ChangeLog", new DateTime(2019, 8, 2)),
-                new Tuple<string, string, DateTime>("1.1.2", "Tilføjet funktionalitet til at hente Lokations-info om computere", new DateTime(2019, 8, 21))
+                new Tuple<string, string, DateTime>("1.1.2", "Tilføjet funktionalitet til at hente Lokations-info om computere", new DateTime(2019, 8, 21)),
+                new Tuple<string, string, DateTime>("1.1.3", "Fikset bug som gjorde at fejl-beskeder ikke blev vist.", new DateTime(2020, 2, 14))
             };
         }
     }

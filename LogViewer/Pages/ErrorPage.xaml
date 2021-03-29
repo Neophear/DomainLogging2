@@ -16,6 +16,6 @@
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Height="100" VerticalAlignment="Stretch" Width="100" Margin="30" Source="/LogViewer;component/Images/error_icon.png"/>
         <TextBlock Grid.Row="1" FontSize="30" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=ErrorTitle, FallbackValue='Der skete en uventet fejl!'}" />
-        <TextBox Grid.Row="2" TextWrapping="Wrap" Visibility="{Binding Path=MessageVisibility, Mode=OneWay}" Text="{Binding Path=ErrorMessage}" />
+        <TextBox Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=ErrorMessage}" />
     </Grid>
 </local:BasePage>

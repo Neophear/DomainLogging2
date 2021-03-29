@@ -20,11 +20,6 @@ namespace LogViewer.Pages
     /// </summary>
     public partial class ErrorPage : BasePage
     {
-        public Visibility MessageVisibility
-        {
-            get { return String.IsNullOrEmpty(ErrorMessage) ? Visibility.Hidden : Visibility.Visible; }
-        }
-
         public string ErrorTitle
         {
             get { return (string)GetValue(ErrorTitleProperty); }
@@ -52,10 +47,9 @@ namespace LogViewer.Pages
             if (e is System.ServiceModel.EndpointNotFoundException)
                 ErrorTitle = "Kunne ikke forbinde til servicen!";
             else
-            {
                 ErrorTitle = "Der skete en uventet fejl!";
-                ErrorMessage = e.Message;
-            }
+
+            ErrorMessage = $"{e.Message}\n{e.InnerException?.Message}";
         }
     }
 }
