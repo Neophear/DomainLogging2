@@ -2,6 +2,7 @@
 using DomainLoggingService.Models.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -127,7 +128,7 @@ namespace DomainLoggingService.Data
             }
             catch (Exception ex)
             {
-                File.AppendAllText(@"L:\Websites\DLService\errors.txt", $"Computer: {computerName} - {DateTime.Now}\r\n{ex}\r\n\r\n");
+                File.AppendAllText($"{ConfigurationManager.AppSettings.Get("ErrorFolder")}\\errors.txt", $"Computer: {computerName} - {DateTime.Now}\r\n{ex}\r\n\r\n");
                 //File.AppendAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\DLDBServiceErrors.txt", $"Computer: {computerName} - {DateTime.Now}\r\n{ex}\r\n\r\n");
             }
         }
